@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#10131d">
+  <title>SANSAD FIGHT | Mohd Jaun Rizvi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="introScreen" class="intro-screen">
+      <div class="intro-top"><a href="https://www.instagram.com/jaunrizviii/" target="_blank" rel="noopener">◎ @jaunrizviii</a><span>AN ORIGINAL GAME BY MOHD JAUN RIZVI</span></div>
+      <video id="introVideo" playsinline preload="auto" poster="assets/title_poster.png">
+        <source src="assets/sansad_intro.mp4" type="video/mp4">
+      </video>
+      <div class="intro-shade"></div>
+      <div class="intro-copy">
+        <div class="intro-logo">SANSAD <b>FIGHT</b></div>
+        <p>THE CARTOON POLITICAL ARENA</p>
+        <button id="playIntroBtn" class="primary">▶ PLAY INTRO WITH SOUND</button>
+        <button id="skipIntroBtn">SKIP INTRO</button>
+        <small>Use headphones for the full experience</small>
+      </div>
+    </section>
+    <audio id="themeAudio" src="assets/sansad_theme.m4a" preload="auto" loop></audio>
+    <header class="topbar"><a id="instagram" href="https://www.instagram.com/jaunrizviii/" target="_blank" rel="noopener">◎ @jaunrizviii</a><span>DEVELOPED BY MOHD JAUN RIZVI</span><button id="soundBtn" class="sound-btn" aria-label="Mute music">🔊 MUSIC ON</button></header>
+    <main id="menu" class="screen">
+      <div class="brand">SANSAD <b>FIGHT</b></div>
+      <p class="tagline">THE CARTOON POLITICAL ARENA</p>
+      <p class="notice">A fictional parody game made for entertainment only.</p>
+      <button id="startBtn" class="primary">START GAME</button>
+      <button id="termsBtn">TERMS &amp; CONDITIONS</button>
+      <button id="privacyBtn">PRIVACY POLICY</button>
+      <button id="creditsBtn">CREDITS</button>
+    </main>
+
+    <section id="setup" class="screen hidden">
+      <h1>GAME SETUP</h1>
+      <label>Game mode
+        <select id="mode"><option value="cpu">Single Player — You vs CPU</option><option value="local">Local 2 Player</option></select>
+      </label>
+      <label>Your fighter
+        <select id="fighter1"><option>Leader One</option><option>Leader Two</option><option>Leader Three</option><option>Leader Four</option><option>Leader Five</option></select>
+      </label>
+      <label>Opponent
+        <select id="fighter2"><option>Leader Two</option><option>Leader One</option><option>Leader Three</option><option>Leader Four</option><option>Leader Five</option></select>
+      </label>
+      <label>Arena
+        <select id="arena"><option>Parliament Plaza</option><option>Delhi Street</option><option>Jantar Mantar</option><option>Indian Village</option></select>
+      </label>
+      <div class="buttonrow"><button id="backBtn">BACK</button><button id="fightBtn" class="primary">FIGHT!</button></div>
+    </section>
+
+    <section id="legal" class="screen hidden">
+      <h2 id="legalTitle"></h2><div id="legalText" class="legaltext"></div><button id="legalBack">BACK</button>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="hud">
+        <div class="fighterhud"><span id="name1">PLAYER 1</span><div class="health"><i id="health1"></i></div></div>
+        <div class="timer" id="timer">99</div>
+        <div class="fighterhud right"><span id="name2">PLAYER 2</span><div class="health"><i id="health2"></i></div></div>
+      </div>
+      <div id="stage"></div>
+      <div class="gamebottom">
+        <div class="movehint" id="movehint">P1: A/D move · W jump · F punch · G kick</div>
+        <div class="mobilecontrols">
+          <div class="pad"><button data-key="left">◀</button><button data-key="right">▶</button><button data-key="jump">▲</button></div>
+          <div class="actions"><button data-action="punch">PUNCH</button><button data-action="kick">KICK</button><button data-action="grab">GRAB</button><button data-action="super">SUPER</button></div>
+        </div>
+        <button id="exitBtn" class="exit">EXIT MATCH</button>
+      </div>
+      <div id="result" class="result hidden"><h2 id="resultText"></h2><button id="againBtn" class="primary">PLAY AGAIN</button><button id="menuBtn">MAIN MENU</button></div>
+    </section>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
